@@ -10,7 +10,7 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
-        <script src="sorttable.js"></script>
+        <script src="https://keywords.been-vandam.nl/sorttable.js"></script>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
