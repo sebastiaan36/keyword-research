@@ -51,14 +51,29 @@ class KeywordsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Keywords $keywords)
+    public function show($project, $keyword)
     {
-        //get the keyword id from the url
+
+        $keyword = Keywords::where('id', $keyword)->first();
+
+        $history = $keyword->historical;
+
+        $history = json_decode($history, true);
+
+// Check for JSON errors
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            // Handle error
+            die('Invalid JSON format');
+        }
+        $history = array_reverse($history);
+       foreach ($history as $h){
+           $labels[] = $h['month'] . "-" . $h['year'];
+           $data[] = $h['search_volume'];
+       }
 
 
-        //get the values of the keyword
 
-        return view('project.keyword.show')->with('keywords', $keywords);
+        return view('project.keyword.show')->with(compact('keyword', 'history', 'labels', 'data'));
 
     }
 
