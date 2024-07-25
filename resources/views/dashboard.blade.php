@@ -22,11 +22,15 @@
 
                             <h2 class="text-2xl mb-6 mt-6 font-semibold">Projecten</h2>
                             <ul>
-                                @foreach($projects as $p)
+                                @forelse($projects as $p)
                                     <li>
                                         <a href="{{route('project.keyword.index', $p->id)}}"> - {{$p->name}}</a>
                                     </li>
-                                @endforeach
+                                @empty
+
+                                    <p>Geen projecten gevonden</p>
+
+                                @endforelse
                             </ul>
                             <a href="{{route('project.create')}}" class="my-6 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Nieuw Project</a>
 

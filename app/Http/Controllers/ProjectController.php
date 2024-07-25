@@ -38,7 +38,10 @@ class ProjectController extends Controller
         $project->description = $request->description;
         $project->user_id = auth()->id();
         $project->save();
-        return view('dashboard')->with('status', 'Project created');
+
+        //return the view of Project.create with a status message
+        return view('project.create')->with('status', 'Project created');
+        //return view('dashboard')->with('status', 'Project created');
     }
 
     /**

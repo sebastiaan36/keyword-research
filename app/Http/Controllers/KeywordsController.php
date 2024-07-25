@@ -34,6 +34,7 @@ class KeywordsController extends Controller
      */
     public function store(StoreKeywordsRequest $request)
     {
+
         //break every line of the textarea into an array
         $keywords = explode("\n", $request->keyword);
         //dd($keywords);
@@ -45,7 +46,10 @@ class KeywordsController extends Controller
             $k->project_id = $request->project_id;
             $k->save();
         }
-        return view('dashboard')->with('status', 'Keywords created');
+        //return the view of the project with a status message
+        $project_id = $request->project_id;
+        return redirect()->route('project.keyword.index', $project_id)->with('status', 'Keywords created');
+        //return view('project')->with('status', 'Keywords created', 'project_id', $project_id);
     }
 
     /**

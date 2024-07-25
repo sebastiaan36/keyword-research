@@ -24,7 +24,7 @@
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-                            @foreach ($projects as $project)
+                            @forelse ($projects as $project)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-no-wrap">
                                         <div class="text-sm leading-5 font-medium text-gray-900"><a href="{{ route('project.show', $project->id) }}">{{ $project->name }}</a></div>
@@ -40,7 +40,9 @@
                                         <a href="{{ route('project.show', $project->id) }}" class="text-indigo-600 hover:text-indigo-900">View</a>
                                     </td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <p>Leeg</p>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
