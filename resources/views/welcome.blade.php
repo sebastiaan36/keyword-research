@@ -58,7 +58,7 @@
                         <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
                             <div>
                                 <h1 class="text-xl font-semibold">Welkom Annabel!</h1>
-                                <p class="mt-4 text-xl">Hier kan je al je keyword research doen. Alle data die je je maar kan wensen vind je hier. Je moet alleen nog even inloggen.</p>
+                                <p class="mt-4 text-xl">Hier kan je al je keyword research doen. Alle data die je je maar kan wensen vind je hier. Je moet alleen nog even inloggen. Succes!</p>
                             </div>
                         </div>
                     </main>
